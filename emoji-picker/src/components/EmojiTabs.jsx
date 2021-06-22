@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { connect } from "react-redux";
 import TabEmojis from "./TabEmojis";
+import TabRecent from "./TabRecent";
+import { updateEmojis } from '../store/actions/';
+import { sections } from "../ sections";
 
-function EmojiTabs({onEmojiClick}) {
+const MAX_NUMBER_RECENT_EMOJI = 25;
+
+function EmojiTabs({onEmojiClick, dispatch, recentEmojis}) {
   const [tabs, setTabs] = useState([true, false]);
-  const emojis = [128512, 128513, 128514, 128515, 128516, 128517, 128518, 128519, 128520];
 
   const tabOnClick = (evt) => {
     const name = evt.target.dataset.name;
@@ -15,11 +20,22 @@ function EmojiTabs({onEmojiClick}) {
     }
   }
 
+  const onClick = (evt) => {
+    const row = evt.target.dataset.row;
+    const column = evt.target.dataset.column;
+    const text = sections[row].items[column];
+
+    dispatch(updateEmojis(text, row, column));
+
+    onEmojiClick(evt);
+  }
+
+
   return (
     <>
       <div className="emoji-helper">
-        <TabEmojis title={'Эмоции'} isShow={tabs[0]} id={'emojis'} onEmojiClick={onEmojiClick} emojis={emojis} />
-        <TabEmojis title={'Недавние'} isShow={tabs[1]} id={'recent'} onEmojiClick={onEmojiClick} emojis={emojis} />
+        <TabEmojis title={'Эмоции'} isShow={tabs[0]} id={'emojis'} onEmojiClick={onClick}/>
+        <TabRecent title={'Недавние'} isShow={tabs[1]} id={'recent'} onEmojiClick={onClick} emojis={recentEmojis.slice(0, MAX_NUMBER_RECENT_EMOJI)} />
 
         <div className="emoji-tabs">
           <button onClick={tabOnClick} className={`emoji-tabs__tablink emoji-tabs__tablink--emojis ${tabs[0] ? 'emoji-tabs__tablink--active' : ''}`} data-name="emojis">
@@ -34,4 +50,8 @@ function EmojiTabs({onEmojiClick}) {
   )
 }
 
-export default EmojiTabs;
+const mapStateToProps = state => ({
+  recentEmojis: state.recentEmojis
+})
+
+export default connect(mapStateToProps)(EmojiTabs);
