@@ -39,7 +39,7 @@ function ChatBlock(props) {
   }
 
   const onInput = () => {
-    if (textareaRef.current.innerText === '\n') {
+    if (textareaRef.current.innerText === '\n' || textareaRef.current.innerText === '') {
       setIsPlaceholderActive(true);
     } else if (isPlaceholderActive !== false) {
       setIsPlaceholderActive(false);
@@ -49,7 +49,7 @@ function ChatBlock(props) {
   return (
     <div className={`chat ${className}`}>
       {isEmojisActive && <EmojiTabs onEmojiClick={onEmojiClick} />}
-      <div onInput={onInput} role="textbox" aria-multiline="true" contentEditable="true" ref={textareaRef} className="chat__input">
+      <div tabIndex="1" onInput={onInput} role="textbox" aria-multiline="true" contentEditable="true" ref={textareaRef} className="chat__input">
       </div>
       {isPlaceholderActive && <Placeholder />}
       <EmojiButton onClick={onClickButton} />
