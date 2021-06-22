@@ -30,14 +30,16 @@ function ChatBlock(props) {
         const range = sel.getRangeAt(0);
         range.deleteContents();
         range.insertNode(document.createTextNode(text));
+        onInput();
       }
     } else if (document.selection && document.selection.createRange) {
       document.selection.createRange().text = text;
+      onInput();
     }
   }
 
-  const onInput = (evt) => {
-    if (evt.target.innerText === '\n') {
+  const onInput = () => {
+    if (textareaRef.current.innerText === '\n') {
       setIsPlaceholderActive(true);
     } else if (isPlaceholderActive !== false) {
       setIsPlaceholderActive(false);
