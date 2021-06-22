@@ -32,7 +32,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 
-  padding-right: 30px;
+  padding-right: 34px;
 
   line-height: 18px;
   font-size: 13px;
@@ -44,7 +44,7 @@ body {
 .emoji {
   position: absolute;
   top: 9px;
-  right: 16px;
+  right: 24px;
 }
 
 .emoji__link {
@@ -156,4 +156,18 @@ body {
 .emoji-list__icon:hover {
   cursor: pointer;
   background-color: #f0f2f5;
+}
+
+.placeholder {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  pointer-events: none;
+}
+
+.placeholder__text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: #939393;
 }

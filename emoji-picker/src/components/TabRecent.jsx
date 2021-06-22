@@ -7,7 +7,7 @@ function TabRecent({isShow, onEmojiClick, id, emojis}) {
           {emojis.map((emoji) => {
             if (emoji[0] !== 0)  {
                 return (
-                <button key={emoji[2] + '_' + emoji[3]} unselectable="on" onClick={onEmojiClick} data-row={emoji[2]} data-column={emoji[3]} className="emoji-list__icon">{emoji[0]}</button>
+                <button key={'Recent_' + emoji[2] + '_' + emoji[3]} unselectable="on" onClick={onEmojiClick} data-row={emoji[2]} data-column={emoji[3]} className="emoji-list__icon">{emoji[0]}</button>
               )
             } else {
               return '';

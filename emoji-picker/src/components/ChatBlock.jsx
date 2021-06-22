@@ -2,10 +2,12 @@ import { useRef, useState } from "react";
 import EmojiButton from "./EmojiButton";
 import EmojiTabs from './EmojiTabs';
 import { sections } from '../ sections';
+import Placeholder from "./Placeholder";
 
 function ChatBlock(props) {
   const {className} = props;
   const [isEmojisActive, setIsEmojisActive] = useState(false);
+  const [isPlaceholderActive, setIsPlaceholderActive] = useState(true);
 
   const textareaRef = useRef();
 
@@ -34,11 +36,20 @@ function ChatBlock(props) {
     }
   }
 
+  const onInput = (evt) => {
+    if (evt.target.innerText === '\n') {
+      setIsPlaceholderActive(true);
+    } else if (isPlaceholderActive !== false) {
+      setIsPlaceholderActive(false);
+    }
+  }
+
   return (
     <div className={`chat ${className}`}>
       {isEmojisActive && <EmojiTabs onEmojiClick={onEmojiClick} />}
-      <div placeholder="Ваше сообщение" role="textbox" aria-multiline="true" contentEditable="true" ref={textareaRef} className="chat__input">
+      <div onInput={onInput} role="textbox" aria-multiline="true" contentEditable="true" ref={textareaRef} className="chat__input">
       </div>
+      {isPlaceholderActive && <Placeholder />}
       <EmojiButton onClick={onClickButton} />
     </div>
   )
