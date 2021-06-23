@@ -26,4 +26,4 @@
 
 * В качестве фрейморка был использован React + Redux
 * Эмодзи брались с [официальных ресурсов](https://github.com/Chaptykov/VKFrontendTask/blob/main/sections.json)
-* Проект был загружен на GitHub Pages
+* Проект был загружен на [GitHub Pages](https://timurbl78.github.io/vk-emoji-input/)
