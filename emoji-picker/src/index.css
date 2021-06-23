@@ -18,9 +18,10 @@ body {
   margin: 50px auto;
 }
 
-.chat__input {
+.chat__input, .highlights {
   width: 290px;
   height: auto;
+  min-height: 38px;
   max-height: 200px;
   padding: 9px;
 
@@ -41,7 +42,13 @@ body {
   border-radius: 4px;
 }
 
+.chat__input {
+  z-index: 5;
+  position: relative;
+}
+
 .emoji {
+  z-index: 10;
   position: absolute;
   top: 9px;
   right: 24px;
@@ -173,5 +180,20 @@ body {
 }
 
 .highlighted {
-  color: blue;
+  color: #939393;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.backdrop {
+  overflow: auto;
+  background-color: white;
+}
+
+.highlights {
+  position: absolute;
+
+  color: transparent;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
