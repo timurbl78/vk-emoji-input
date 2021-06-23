@@ -1,5 +1,5 @@
 export const findEMails = (searchText) => {
-  const regexp = /\S+[a-z0-9]@[a-z0-9\.]+/img;
+  const regexp = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/g;
   const result = searchText.match(regexp);
   if (result) {
       return result;
