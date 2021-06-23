@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/vk-emoji-input/static/css/main.7d48f419.chunk.css",
-    "main.js": "/vk-emoji-input/static/js/main.9b869ec6.chunk.js",
-    "main.js.map": "/vk-emoji-input/static/js/main.9b869ec6.chunk.js.map",
+    "main.css": "/vk-emoji-input/static/css/main.46e2090a.chunk.css",
+    "main.js": "/vk-emoji-input/static/js/main.ef1acae2.chunk.js",
+    "main.js.map": "/vk-emoji-input/static/js/main.ef1acae2.chunk.js.map",
     "runtime-main.js": "/vk-emoji-input/static/js/runtime-main.628c3136.js",
     "runtime-main.js.map": "/vk-emoji-input/static/js/runtime-main.628c3136.js.map",
     "static/js/2.9cc82a3e.chunk.js": "/vk-emoji-input/static/js/2.9cc82a3e.chunk.js",
     "static/js/2.9cc82a3e.chunk.js.map": "/vk-emoji-input/static/js/2.9cc82a3e.chunk.js.map",
     "index.html": "/vk-emoji-input/index.html",
-    "static/css/main.7d48f419.chunk.css.map": "/vk-emoji-input/static/css/main.7d48f419.chunk.css.map",
+    "static/css/main.46e2090a.chunk.css.map": "/vk-emoji-input/static/css/main.46e2090a.chunk.css.map",
     "static/js/2.9cc82a3e.chunk.js.LICENSE.txt": "/vk-emoji-input/static/js/2.9cc82a3e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/vk-emoji-input/static/media/IconRecent.b95ee132.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.628c3136.js",
     "static/js/2.9cc82a3e.chunk.js",
-    "static/css/main.7d48f419.chunk.css",
-    "static/js/main.9b869ec6.chunk.js"
+    "static/css/main.46e2090a.chunk.css",
+    "static/js/main.ef1acae2.chunk.js"
   ]
 }
