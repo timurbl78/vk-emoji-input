@@ -4,7 +4,7 @@ body {
 }
 
 .main {
-  width: 1200px;
+  min-width: 320px;
   margin: 300px auto;
 }
 
