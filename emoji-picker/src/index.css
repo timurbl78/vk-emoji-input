@@ -171,3 +171,7 @@ body {
   line-height: 18px;
   color: #939393;
 }
+
+.highlighted {
+  color: blue;
+}
